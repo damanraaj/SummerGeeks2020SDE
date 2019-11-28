@@ -12,11 +12,12 @@ class Main_Win(Ui_MainWindow):
         
         self.sms_APIKEY="YOUR-API_KEY"
         self.sms_SECRET="YOUR-SECRET-KEY"
+        self.sms_SENDERID="YOUR-SENDER-ID"
 
         self.Email_port = 587
-        self.Email_smtp_server = "smtp.gmail.com"#
-        self.Email_sender_email = "******@gmail.com"#
-        self.Email_sender_pass = "******"
+        self.Email_smtp_server = "YOUR-SMTP-ADDRESS"   #smtp.gmail.com for GMAIL
+        self.Email_sender_email = "YOUR-EMAIL_ADDRESS" 
+        self.Email_sender_pass = "YOUR-EMAIL-PASSWORD"
 
 
         phoneregex=QtCore.QRegExp("^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$")
@@ -116,7 +117,7 @@ Phone - {self.vPhone.text()}
 Checkin Time - {Checkin.strftime("%I:%M %p")}
 """
             #print(hostMsg)
-            response = way2smsApi.sendPostRequest(way2smsApi.URL, self.sms_APIKEY, self.sms_SECRET, 'stage', self.hPhone.text(), "DAMAN", hostMsg )
+            response = way2smsApi.sendPostRequest(way2smsApi.URL, self.sms_APIKEY, self.sms_SECRET, 'prod', self.hPhone.text(), self.sms_SENDERID, hostMsg )
             print(response.text)
             self.server=smtplib.SMTP(self.Email_smtp_server, self.Email_port)
             self.server.starttls()
