@@ -21,10 +21,10 @@ Installation Instructions:
 
 Usage:
 1. Run MAIN.PY
-2. Check-in : 
-      2a. Select check-in tab if not selected.
-      2b. Fill the details.
-      2c. Press Submit Button.
+2. Check-in :
+      a. Select check-in tab if not selected.
+      b. Fill the details.
+      c. Press Submit Button.
       Details of Visitor is sent to the Host via SMS and email as provided.
 3. Check-out :
       a. Select check-out tab if not selected.
