@@ -1,7 +1,5 @@
 import smtplib, ssl
 import os,sys
-import qdarkstyle
-import configparser
 from datetime import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets,QtSql
 from UI import Ui_MainWindow
