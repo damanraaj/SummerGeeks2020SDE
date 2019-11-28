@@ -16,6 +16,7 @@ Requirements:
 Instructions:
 1. Create way2sms Live API and Secret Key at https://www.way2sms.com/userApi
 2. Create way2sms Sender ID by runing way2smsApiCreateSenderId.py
-3. Enter your API key and Secret Key in main.py at LINE NO. 13 and 14
-4. Enter your Gmail Id and password in main.py at LINE NO. 18 and 19
+3. Enter your API key and Secret Key in main.py at LINE NO. 13 and 14.
+4. Enter your SMTP Server Address, Email Id and password in main.py at LINE NO. 17, 18 and 19. 
+   Visit https://serversmtp.com/smtp-server-address/ to find your SMTP Server Address.
 5. Run main.py
