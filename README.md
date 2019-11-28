@@ -7,6 +7,12 @@ using PYQT5 for GUI
       smtplib for Email
       way2sms API for sms
 
+Requirements:
+1. Python 3.4+
+2. PyQt5
+3. Way2sms Account with Live API Key
+4. EMail Account 
+
 Instructions:
 1. Create way2sms Live API and Secret Key at https://www.way2sms.com/userApi
 2. Create way2sms Sender ID by runing way2smsApiCreateSenderId.py
