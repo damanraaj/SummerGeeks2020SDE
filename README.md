@@ -2,9 +2,9 @@
 Innovaccer Summergeeks 2020 SDE Intern Assignment
 
 Implemented in Python
-using PYQT5 for GUI
-      SQLITE for Database
-      smtplib for Email
+using PYQT5 for GUI,
+      SQLITE for Database,
+      smtplib for Email, and 
       way2sms API for sms
 
 Requirements:
