@@ -26,6 +26,7 @@ Usage:
    b. Fill the details.
    c. Press Submit Button.
    Details of Visitor is sent to the Host via SMS and email as provided.
+   ![Alt text](summergeeks2020assignment/Screenshots/checkin.JPG)
 3. Check-out :
    a. Select check-out tab if not selected.
    b. Select visitor record from table.
