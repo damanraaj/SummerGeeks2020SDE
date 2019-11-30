@@ -22,14 +22,14 @@ Installation Instructions:
 Usage:
 1. Run MAIN.PY
 2. Check-in :
-   a. Select check-in tab if not selected.
-   b. Fill the details.
-   c. Press Submit Button.
-   Details of Visitor is sent to the Host via SMS and email as provided.
+   *a. Select check-in tab if not selected.
+   *b. Fill the details.
+   *c. Press Submit Button.
+   *Details of Visitor is sent to the Host via SMS and email as provided.
    ![Alt text](summergeeks2020assignment/Screenshots/checkin.JPG)
 3. Check-out :
-   a. Select check-out tab if not selected.
-   b. Select visitor record from table.
-   c. Press Check Out Button.
+   *a. Select check-out tab if not selected.
+   *b. Select visitor record from table.
+   *c. Press Check Out Button.
    Details of the visit is sent to the Visitor to his/her email address.
 4. Use Menu File->Exit or Close Window to exit.
