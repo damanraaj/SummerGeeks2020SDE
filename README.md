@@ -7,7 +7,7 @@ GUI was created with Qt Creator.
 
 Requirements:
 1. Python 3.6+
-2. PyQt5 and requests (use pip install -r requirements.txt OR pip install pyqt5,requests)
+2. PyQt5 and requests (use pip install -r requirements.txt OR pip install pyqt5 requests)
 3. Way2sms Account with Live API Key (Payment required)
 4. Email Account 
 
