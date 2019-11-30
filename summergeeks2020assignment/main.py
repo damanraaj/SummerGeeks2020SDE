@@ -1,5 +1,6 @@
 import smtplib, ssl
 import os,sys
+import configparser
 from datetime import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets,QtSql
 from UI import Ui_MainWindow
@@ -7,16 +8,29 @@ import way2smsApi
 class Main_Win(Ui_MainWindow):
     def setupUi(self,MainWindow):
         Ui_MainWindow.setupUi(self,MainWindow)
+        config=configparser.ConfigParser()
+        try:
+            configfile=open(r"config.ini",'r')
+            config.read_file(configfile)
+            self.sms_APIKEY=config['WAY2SMS']['APIKEY']
+            self.sms_SECRET=config['WAY2SMS']['SECRET']
+            self.sms_SENDERID=config['WAY2SMS']['SENDERID']
+            
+            self.Email_port = 587
+            self.Email_smtp_server = config['SMTP']['SERVER']  #smtp.gmail.com for GMAIL
+            self.Email_sender_email = config['SMTP']['EMAIL']
+            self.Email_sender_pass = config['SMTP']['PASSWORD']
+        except:
+            config['WAY2SMS']={'APIKEY' : '', 'SECRET' : '', 'SENDERID':''}
+            config['SMTP']={'SERVER' :'smtp.gmail.com','EMAIL' :'','PASSWORD' : ''}
+            with open(r"config.ini",'w') as confile:
+                config.write(confile)
+            
+            MainWindow.close()
         
-        self.sms_APIKEY="YOUR-API_KEY"
-        self.sms_SECRET="YOUR-SECRET-KEY"
-        self.sms_SENDERID="YOUR-SENDER-ID"
-
-        self.Email_port = 587
-        self.Email_smtp_server = "YOUR-SMTP-ADDRESS"   #smtp.gmail.com for GMAIL
-        self.Email_sender_email = "YOUR-EMAIL_ADDRESS" 
-        self.Email_sender_pass = "YOUR-EMAIL-PASSWORD"
-
+        self.server=smtplib.SMTP(self.Email_smtp_server, self.Email_port)
+        self.server.starttls()
+        self.server.login(self.Email_sender_email, self.Email_sender_pass)
 
         phoneregex=QtCore.QRegExp("^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$")
         self.phone_validator=QtGui.QRegExpValidator()
@@ -53,6 +67,7 @@ class Main_Win(Ui_MainWindow):
         self.checkOutBtn.clicked.connect(self.checkOutAndNotify)
 
         def endProgram():
+            self.server.quit()
             MainWindow.close()
         
         self.actionExit.triggered.connect(endProgram)
@@ -85,11 +100,8 @@ Host - {CurrRec.value("hname")}
 Address - {CurrRec.value("hemail")}
 """
         #print(visitorMessage)
-        self.server=smtplib.SMTP(self.Email_smtp_server, self.Email_port)
-        self.server.starttls()
-        self.server.login(self.Email_sender_email, self.Email_sender_pass)
+        
         self.server.sendmail(self.Email_sender_email,CurrRec.value("vemail"),visitorMessage)
-        self.server.quit()
 
 
     def notifyHost(self):
@@ -117,11 +129,7 @@ Checkin Time - {Checkin.strftime("%I:%M %p")}
             #print(hostMsg)
             response = way2smsApi.sendPostRequest(way2smsApi.URL, self.sms_APIKEY, self.sms_SECRET, 'prod', self.hPhone.text(), self.sms_SENDERID, hostMsg )
             print(response.text)
-            self.server=smtplib.SMTP(self.Email_smtp_server, self.Email_port)
-            self.server.starttls()
-            self.server.login(self.Email_sender_email, self.Email_sender_pass)
             self.server.sendmail(self.Email_sender_email,self.hEmail.text(),hostMsg)
-            self.server.quit()
             self.clearForm()
         else:
             print(query.lastError().text())
