@@ -9,7 +9,7 @@ Requirements:
 1. Python 3.6+
 2. PyQt5 and requests (use pip install -r requirements.txt OR pip install pyqt5 requests)
 3. Way2sms Account with Live API Key (Payment required)
-4. Email Account 
+4. Email Account (Enable less secure apps for Gmail at https://myaccount.google.com/lesssecureapps)
 
 Installation Instructions:
 1. Create way2sms Live API and Secret Key at https://www.way2sms.com/userApi
@@ -22,13 +22,13 @@ Installation Instructions:
 Usage:
 1. Run MAIN.PY
 2. Check-in :
-      a. Select check-in tab if not selected.
-      b. Fill the details.
-      c. Press Submit Button.
-      Details of Visitor is sent to the Host via SMS and email as provided.
+a. Select check-in tab if not selected.
+b. Fill the details.
+c. Press Submit Button.
+Details of Visitor is sent to the Host via SMS and email as provided.
 3. Check-out :
-      a. Select check-out tab if not selected.
-      b. Select visitor record from table.
-      c. Press Check Out Button.
-      Details of the visit is sent to the Visitor to his/her email address.
+a. Select check-out tab if not selected.
+b. Select visitor record from table.
+c. Press Check Out Button.
+Details of the visit is sent to the Visitor to his/her email address.
 4. Use Menu File->Exit or Close Window to exit.
