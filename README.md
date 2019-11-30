@@ -32,4 +32,5 @@ Usage:
    *b. Select visitor record from table.
    *c. Press Check Out Button.
    Details of the visit is sent to the Visitor to his/her email address.
+   ![Alt text](summergeeks2020assignment/Screenshots/checkout.JPG)
 4. Use Menu File->Exit or Close Window to exit.
