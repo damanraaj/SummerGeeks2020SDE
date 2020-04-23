@@ -20,6 +20,7 @@ Intructions:
 * Details of the visit is sent to the Visitor to his/her email address.
    ![Alt text](summergeeks2020assignment/Screenshots/checkout.JPG)
 4. Use Menu File->Exit or Close Window to exit.
+
 Requirements:
 1. Python 3.6+
 2. PyQt5 and requests (use pip install -r requirements.txt OR pip install pyqt5 requests)
