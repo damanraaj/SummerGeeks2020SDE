@@ -5,7 +5,7 @@ Implemented in Python
 using PYQT5 for GUI, SQLITE for Database, smtplib for Email, and way2sms API for SMS.
 GUI was created with Qt Creator.
 
-Intructions:
+Instructions:
 1. Run MAIN.PY
 2. Check-in :
 * Select check-in tab if not selected.
